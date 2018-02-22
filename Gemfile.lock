@@ -51,9 +51,9 @@ GEM
     bcrypt (3.1.11)
     bindex (0.5.0)
     builder (3.2.3)
-    byebug (10.0.0)
     case_transform (0.2)
       activesupport
+    coderay (1.1.2)
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
     coffee-rails (4.2.2)
@@ -76,9 +76,16 @@ GEM
     devise_invitable (1.7.1)
       actionmailer (>= 4.1.0)
       devise (>= 4.0.0)
+    diff-lcs (1.3)
     equalizer (0.0.11)
     erubis (2.7.0)
     execjs (2.7.0)
+    factory_girl (4.8.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.8.0)
+      factory_girl (~> 4.8.0)
+      railties (>= 3.0.0)
+    ffaker (2.5.0)
     ffi (1.9.21)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
@@ -145,7 +152,7 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.7.0)
       mini_mime (>= 0.1.1)
-    method_source (0.9.0)
+    method_source (0.8.2)
     mini_mime (1.0.0)
     mini_portile2 (2.3.0)
     minitest (5.11.3)
@@ -157,6 +164,15 @@ GEM
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
     orm_adapter (0.5.0)
+    pg (0.19.0)
+    pry (0.10.4)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    pry-nav (0.2.4)
+      pry (>= 0.9.10, < 0.11.0)
+    pry-rails (0.3.6)
+      pry (>= 0.10.4)
     puma (3.11.2)
     pundit (1.1.0)
       activesupport (>= 3.0.0)
@@ -194,6 +210,23 @@ GEM
       ffi (>= 0.5.0, < 2)
     responders (2.3.0)
       railties (>= 4.2.0, < 5.1)
+    rspec-core (3.5.4)
+      rspec-support (~> 3.5.0)
+    rspec-expectations (3.5.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.5.0)
+    rspec-mocks (3.5.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.5.0)
+    rspec-rails (3.5.2)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec-core (~> 3.5.0)
+      rspec-expectations (~> 3.5.0)
+      rspec-mocks (~> 3.5.0)
+      rspec-support (~> 3.5.0)
+    rspec-support (3.5.0)
     sass (3.5.5)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -205,6 +238,10 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    seedbank (0.4.0)
+    shoulda-matchers (3.1.1)
+      activesupport (>= 4.0.0)
+    slop (3.6.0)
     spring (2.0.2)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -217,7 +254,6 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sqlite3 (1.3.13)
     switch_user (1.4.0)
     thor (0.20.0)
     thread_safe (0.3.6)
@@ -249,10 +285,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  byebug
   coffee-rails (~> 4.2)
   devise
   devise_invitable (~> 1.7.0)
+  factory_girl_rails
+  ffaker
   grape
   grape-active_model_serializers
   grape-entity
@@ -267,13 +304,18 @@ DEPENDENCIES
   jquery-rails
   kaminari-grape
   listen (~> 3.0.5)
+  pg (~> 0.18)
+  pry-nav
+  pry-rails
   puma (~> 3.0)
   pundit
   rails (~> 5.0.2)
+  rspec-rails (~> 3.5)
   sass-rails (~> 5.0)
+  seedbank
+  shoulda-matchers (~> 3.1)
   spring
   spring-watcher-listen (~> 2.0.0)
-  sqlite3
   switch_user
   turbolinks (~> 5)
   tzinfo-data
